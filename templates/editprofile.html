@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/fc1e235b2e.js"></script>
+  <link rel="stylesheet" href="{% static 'assets2/form_style.css' %}">
+  <title>Instagram Login Form</title>
+</head>
+
+<body>
+
+  <div id="wrapper">
+    <div class="container">
+      <div class="phone-sapp-demo"></div>
+      <div class="form-data">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+          <div class="logo">
+            <h3 style="padding: 20px;font-size: 20px;">Edit Profile</h3>
+          </div>
+        {{form.image}}
+        {{form.first_name}}
+        {{form.last_name}}
+        {{form.location}}
+        {% comment %} {{form.url}} {% endcomment %}
+         {{form.bio}}
+          <button class="form-btn" type="submit">Save Edit</button>
+          <!-- <a href="index.html" class="form-btn" type="submit">Log in</a> -->
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
+{% endblock content %}
